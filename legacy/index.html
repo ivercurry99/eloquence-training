@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>口才训练 - 14天蜕变计划</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="logo">🎤 口才训练</h1>
+        <nav class="nav">
+          <button class="nav-btn active" data-page="home">训练计划</button>
+          <button class="nav-btn" data-page="flashcard">话术速查</button>
+          <button class="nav-btn" data-page="checkin">打卡记录</button>
+          <button class="nav-btn" data-page="practice">语音练习</button>
+          <button class="nav-btn" data-page="progress">学习进度</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="page-home" class="page active">
+        <div class="hero">
+          <h2 class="hero-title">14天口才蜕变计划</h2>
+          <p class="hero-subtitle">从"脑子想得到"到"嘴巴说得顺"的神经通路</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="overall-progress"></div>
+            <span class="progress-text">已完成 <span id="completed-count">0</span>/14 天</span>
+          </div>
+        </div>
+
+        <div class="phases">
+          <div class="phase" data-phase="1">
+            <div class="phase-header">
+              <h3 class="phase-title">Day 1-3 社交破冰三板斧</h3>
+              <span class="phase-status">搞定陌生人，建立第一印象</span>
+            </div>
+            <div class="day-grid">
+              <button class="day-card" data-day="1">
+                <div class="day-number">1</div>
+                <div class="day-title">自我介绍模板</div>
+                <div class="day-status" id="status-day-1"></div>
+              </button>
+              <button class="day-card" data-day="2">
+                <div class="day-number">2</div>
+                <div class="day-title">接话过渡句</div>
+                <div class="day-status" id="status-day-2"></div>
+              </button>
+              <button class="day-card" data-day="3">
+                <div class="day-number">3</div>
+                <div class="day-title">真诚赞美术</div>
+                <div class="day-status" id="status-day-3"></div>
+              </button>
+            </div>
+          </div>
+
+          <div class="phase" data-phase="2">
+            <div class="phase-header">
+              <h3 class="phase-title">Day 4-7 职场表达四重奏</h3>
+              <span class="phase-status">汇报/请示/协作/会议</span>
+            </div>
+            <div class="day-grid">
+              <button class="day-card" data-day="4">
+                <div class="day-number">4</div>
+                <div class="day-title">汇报三段式</div>
+                <div class="day-status" id="status-day-4"></div>
+              </button>
+              <button class="day-card" data-day="5">
+                <div class="day-number">5</div>
+                <div class="day-title">向上请示</div>
+                <div class="day-status" id="status-day-5"></div>
+              </button>
+              <button class="day-card" data-day="6">
+                <div class="day-number">6</div>
+                <div class="day-title">协作推动</div>
+                <div class="day-status" id="status-day-6"></div>
+              </button>
+              <button class="day-card" data-day="7">
+                <div class="day-number">7</div>
+                <div class="day-title">会议救场</div>
+                <div class="day-status" id="status-day-7"></div>
+              </button>
+            </div>
+          </div>
+
+          <div class="phase" data-phase="3">
+            <div class="phase-header">
+              <h3 class="phase-title">Day 8-11 灵活应变四场景</h3>
+              <span class="phase-status">拒绝/质疑/敬酒/冲突</span>
+            </div>
+            <div class="day-grid">
+              <button class="day-card" data-day="8">
+                <div class="day-number">8</div>
+                <div class="day-title">高情商拒绝</div>
+                <div class="day-status" id="status-day-8"></div>
+              </button>
+              <button class="day-card" data-day="9">
+                <div class="day-number">9</div>
+                <div class="day-title">应对质疑</div>
+                <div class="day-status" id="status-day-9"></div>
+              </button>
+              <button class="day-card" data-day="10">
+                <div class="day-number">10</div>
+                <div class="day-title">敬酒词</div>
+                <div class="day-status" id="status-day-10"></div>
+              </button>
+              <button class="day-card" data-day="11">
+                <div class="day-number">11</div>
+                <div class="day-title">冲突缓冲</div>
+                <div class="day-status" id="status-day-11"></div>
+              </button>
+            </div>
+          </div>
+
+          <div class="phase" data-phase="4">
+            <div class="phase-header">
+              <h3 class="phase-title">Day 12-14 从记忆到本能</h3>
+              <span class="phase-status">内化为肌肉记忆</span>
+            </div>
+            <div class="day-grid">
+              <button class="day-card" data-day="12">
+                <div class="day-number">12</div>
+                <div class="day-title">金句萃取</div>
+                <div class="day-status" id="status-day-12"></div>
+              </button>
+              <button class="day-card" data-day="13">
+                <div class="day-number">13</div>
+                <div class="day-title">语调模仿</div>
+                <div class="day-status" id="status-day-13"></div>
+              </button>
+              <button class="day-card" data-day="14">
+                <div class="day-number">14</div>
+                <div class="day-title">全场景模拟</div>
+                <div class="day-status" id="status-day-14"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-flashcard" class="page">
+        <h2 class="page-title">🃏 话术速查卡</h2>
+        <p class="page-subtitle">每天花 2 分钟过一遍，用哪句看哪句</p>
+        
+        <div class="flashcard-container">
+          <div class="flashcard-section">
+            <h3 class="section-title">🧊 社交破冰</h3>
+            
+            <div class="card-group">
+              <h4 class="group-title">自我介绍</h4>
+              <div class="formula-box">
+                <span class="formula">我是 [做什么] + 最近在 [忙什么] + 顺便能帮你 [什么忙]</span>
+              </div>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">接话过渡</h4>
+              <ul class="phrase-list">
+                <li>"这个角度我还真没想过，挺有意思的。"</li>
+                <li>"你继续说说，我觉得这个挺有启发的。"</li>
+                <li>"原来是这样，难怪你会这么想。"</li>
+                <li>"说到这个，我想到一个相关的……"</li>
+                <li>"那你觉得最关键的是什么？"</li>
+              </ul>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">真诚赞美</h4>
+              <div class="table-box">
+                <table>
+                  <tr><th>类型</th><th>话术</th></tr>
+                  <tr><td>外貌</td><td>"你今天这个搭配真有想法，很精神。"</td></tr>
+                  <tr><td>能力</td><td>"你这个方案考虑得真周全，特别是 XX 部分，很受启发。"</td></tr>
+                  <tr><td>性格</td><td>"跟你聊天很舒服，你不会急着打断别人。"</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="flashcard-section">
+            <h3 class="section-title">💼 职场表达</h3>
+            
+            <div class="card-group">
+              <h4 class="group-title">汇报三段式</h4>
+              <div class="formula-box">
+                <span class="formula">做了什么 → 遇到什么问题 → 下一步怎么办（1分钟内）</span>
+              </div>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">向上请示</h4>
+              <ul class="phrase-list">
+                <li>"我有个想法想跟您确认一下，您看方便聊两句吗？"</li>
+                <li>"我遇到个情况，需要您帮我把把关。"</li>
+                <li>"这个事目前是这样的……，您觉得这个方向对吗？"</li>
+              </ul>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">协作推动</h4>
+              <div class="compare-box">
+                <table>
+                  <tr><th>❌ 别这么说</th><th>✅ 这么说</th></tr>
+                  <tr><td>"你把这个做了。"</td><td>"这事需要你支持一下，咱们一起搞定。"</td></tr>
+                  <tr><td>"什么时候给我？"</td><td>"你看你那边什么时候方便？"</td></tr>
+                  <tr><td>"你这样做不对。"</td><td>"这个思路挺好的，我有个补充想法，咱们碰一下？"</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">会议救场</h4>
+              <div class="table-box">
+                <table>
+                  <tr><th>场景</th><th>话术</th></tr>
+                  <tr><td>跑偏</td><td>"咱们先拉回主线，刚才说的先记下来，后面再讨论。"</td></tr>
+                  <tr><td>卡壳</td><td>"要不换个角度看？如果是业务方，他们会怎么想？"</td></tr>
+                  <tr><td>该定了</td><td>"咱们讨论得很充分了，下一步先这么定：……，大家觉得可以吗？"</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="flashcard-section">
+            <h3 class="section-title">🌀 灵活应变</h3>
+            
+            <div class="card-group">
+              <h4 class="group-title">高情商拒绝</h4>
+              <div class="formula-box">
+                <span class="formula">【肯定】+【原因：客观】+【替代：给一条路】</span>
+              </div>
+              <p class="formula-example">"我理解你需要帮忙。但我这两天确实排不开。要不我把模板发你，你先自己跑一下？"</p>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">应对质疑</h4>
+              <ul class="phrase-list">
+                <li>"你说的这个角度我理解，我再补充一点……"</li>
+                <li>"这个问题确实存在，我们正在改进。"</li>
+                <li>"你的担心有道理，那我们换个角度看——"</li>
+              </ul>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">敬酒词</h4>
+              <div class="table-box">
+                <table>
+                  <tr><th>对象</th><th>话术</th></tr>
+                  <tr><td>领导</td><td>"感谢您一直以来的指导和照顾，这杯敬您。"</td></tr>
+                  <tr><td>平级</td><td>"这一年咱们合作得很愉快，来，一起加油。"</td></tr>
+                  <tr><td>长辈</td><td>"祝您身体健康，您随意，我干了。"</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="card-group">
+              <h4 class="group-title">冲突缓冲</h4>
+              <ul class="phrase-list">
+                <li>"咱们先冷静一下，缓口气再说。"</li>
+                <li>"我理解你的感受，换我我也会着急。"</li>
+                <li>"要不咱们各退一步，看看有没有折中的办法？"</li>
+                <li>"咱们的目标是一样的，只是方法不一样。"</li>
+                <li>"先不争这个，咱们先把眼前的问题解决了，好吗？"</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flashcard-section">
+            <h3 class="section-title">🎯 万能公式</h3>
+            <div class="table-box">
+              <table>
+                <tr><th>公式</th><th>结构</th><th>场景</th></tr>
+                <tr><td>汇报公式</td><td>做了什么 + 遇到什么 + 下一步</td><td>工作汇报</td></tr>
+                <tr><td>拒绝公式</td><td>肯定 + 客观原因 + 替代方案</td><td>拒绝请求</td></tr>
+                <tr><td>赞美公式</td><td>具体细节 + 对你的影响</td><td>夸奖别人</td></tr>
+                <tr><td>质疑公式</td><td>先接住 + "我补充一点" + 邀请讨论</td><td>被质疑时</td></tr>
+                <tr><td>冲突公式</td><td>沉默 2 秒 + 共情 + 拉回目标</td><td>冲突时</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-checkin" class="page">
+        <h2 class="page-title">📋 每日打卡记录</h2>
+        <p class="page-subtitle">诚实记录，不追求完美</p>
+
+        <div class="checkin-container">
+          <div class="checkin-section">
+            <h3 class="section-title">📅 第一阶段：社交破冰</h3>
+            
+            <div class="day-checkin" id="checkin-day-1">
+              <h4 class="day-checkin-title">Day 1 — 自我介绍</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="1" data-item="1"><span>填写了三要素自我介绍</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="1" data-item="2"><span>对镜笑着说 10 遍</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="1" data-item="3"><span>手机录了一遍并回放</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="1" placeholder="今天卡在哪里？哪一句最顺？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-2">
+              <h4 class="day-checkin-title">Day 2 — 接话过渡句</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="2" data-item="1"><span>5 句话抄进手机备忘录</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="2" data-item="2"><span>每句对镜说 5 遍</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="2" data-item="3"><span>白天在真实对话中用了至少 1 句</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="2" placeholder="哪句最自然？今天实战用了吗？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-3">
+              <h4 class="day-checkin-title">Day 3 — 真诚赞美术</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="3" data-item="1"><span>选好了三维度话术</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="3" data-item="2"><span>每句对镜说 5 遍</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="3" data-item="3"><span>今天真诚地夸了 1 个人</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="3" placeholder="今天夸了谁？对方反应如何？"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkin-section">
+            <h3 class="section-title">📅 第二阶段：职场表达</h3>
+            
+            <div class="day-checkin" id="checkin-day-4">
+              <h4 class="day-checkin-title">Day 4 — 汇报三段式</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="4" data-item="1"><span>用真实任务写了三段式</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="4" data-item="2"><span>掐表 1 分钟内讲完</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="4" data-item="3"><span>对镜说 3 遍</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="4" placeholder="选了什么任务练习？时间达标了吗？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-5">
+              <h4 class="day-checkin-title">Day 5 — 向上请示</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="5" data-item="1"><span>3 句开场白能脱口而出</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="5" data-item="2"><span>准备了 1 个真实请示场景</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="5" data-item="3"><span>语气练到"稳而不卑"</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="5" placeholder="选了哪个请示场景练习？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-6">
+              <h4 class="day-checkin-title">Day 6 — 协作推动</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="6" data-item="1"><span>5 句话都能从命令式转合作型</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="6" data-item="2"><span>今天在实际协作中用了至少 1 句</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="6" placeholder="今天在哪次协作中用了新话术？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-7">
+              <h4 class="day-checkin-title">Day 7 — 会议救场</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="7" data-item="1"><span>3 组话术各记了至少 1 句</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="7" data-item="2"><span>转折语调练过</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="7" data-item="3"><span>实际会议中尝试了救场</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="7" placeholder="转折自然吗？哪些场合最需要救场？"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkin-section">
+            <h3 class="section-title">📅 第三阶段：灵活应变</h3>
+            
+            <div class="day-checkin" id="checkin-day-8">
+              <h4 class="day-checkin-title">Day 8 — 高情商拒绝</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="8" data-item="1"><span>三段式拒绝结构记住了</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="8" data-item="2"><span>准备了 3 个场景的拒绝版本</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="8" data-item="3"><span>语气"遗憾但坚定"</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="8" placeholder="今天有用到拒绝话术吗？对方什么反应？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-9">
+              <h4 class="day-checkin-title">Day 9 — 应对质疑</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="9" data-item="1"><span>4 句缓冲话术能脱口而出</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="9" data-item="2"><span>练习中没有说"但是"</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="9" placeholder="今天被质疑了吗？怎么回应的？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-10">
+              <h4 class="day-checkin-title">Day 10 — 敬酒词</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="10" data-item="1"><span>三类各备了 1 句</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="10" data-item="2"><span>对着镜子举杯练过</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="10" data-item="3"><span>眼神稳定</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="10" placeholder="三类各选了哪句？说话时眼神稳吗？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-11">
+              <h4 class="day-checkin-title">Day 11 — 冲突缓冲</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="11" data-item="1"><span>5 句降压话术能脱口而出</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="11" data-item="2"><span>语调平缓（录音确认）</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="11" data-item="3"><span>"先沉默 2 秒深呼吸"练了</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="11" placeholder="今天有遇到冲突吗？用了哪句缓冲话术？"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkin-section">
+            <h3 class="section-title">📅 第四阶段：内化巩固</h3>
+            
+            <div class="day-checkin" id="checkin-day-12">
+              <h4 class="day-checkin-title">Day 12 — 金句萃取</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="12" data-item="1"><span>选好了 Top 10 金句</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="12" data-item="2"><span>每句配合表情和手势练了 3 遍</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="12" data-item="3"><span>不看稿能说出至少 7 句</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="12" placeholder="哪句最有感觉？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-13">
+              <h4 class="day-checkin-title">Day 13 — 语调模仿</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="13" data-item="1"><span>选了至少 2 段模仿素材</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="13" data-item="2"><span>标注了停顿和重音</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="13" data-item="3"><span>跟读录音对比过</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="13" placeholder="选段来源？我最想学的 1 个点？"></textarea>
+              </div>
+            </div>
+
+            <div class="day-checkin" id="checkin-day-14">
+              <h4 class="day-checkin-title">Day 14 — 全场景模拟</h4>
+              <div class="checklist">
+                <label class="checkbox-item"><input type="checkbox" data-day="14" data-item="1"><span>设置了具体场景（时间/地点/人物）</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="14" data-item="2"><span>跑了至少 3 遍</span></label>
+                <label class="checkbox-item"><input type="checkbox" data-day="14" data-item="3"><span>录音回放并自评</span></label>
+              </div>
+              <div class="note-box">
+                <label>今日笔记：</label>
+                <textarea data-day="14" placeholder="对自己的表现满意吗？进步最大的是什么？"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-practice" class="page">
+        <h2 class="page-title">🎤 语音练习</h2>
+        <p class="page-subtitle">对着麦克风练习话术，系统会自动识别并评分</p>
+
+        <div class="practice-container">
+          <div class="practice-card">
+            <h3 class="practice-card-title">📝 选择练习内容</h3>
+            <div class="selector-group">
+              <label>选择天数：</label>
+              <select id="practice-day">
+                <option value="">请选择训练天数</option>
+                ${Array.from({ length: 14 }, (_, i) => `<option value="${i + 1}">Day ${i + 1}</option>`).join('')}
+              </select>
+            </div>
+            <div class="selector-group">
+              <label>选择话术：</label>
+              <select id="practice-phrase">
+                <option value="">请先选择天数</option>
+              </select>
+            </div>
+            <div id="target-phrase-display" class="target-phrase">
+              <h4>目标话术：</h4>
+              <p id="target-text">请选择上方的练习内容</p>
+            </div>
+          </div>
+
+          <div class="practice-card">
+            <h3 class="practice-card-title">🎙️ 语音输入</h3>
+            <div class="recording-area">
+              <button id="record-btn" class="record-btn" onclick="toggleRecording()">
+                <span id="record-icon">🎤</span>
+                <span id="record-text">开始录音</span>
+              </button>
+              <div id="recording-status" class="recording-status">点击按钮开始录音</div>
+              <div id="recording-timer" class="recording-timer">00:00</div>
+            </div>
+            <div class="transcript-area">
+              <h4>识别结果：</h4>
+              <textarea id="transcript-text" readonly placeholder="录音后会显示识别结果"></textarea>
+            </div>
+          </div>
+
+          <div class="practice-card">
+            <h3 class="practice-card-title">📊 评分结果</h3>
+            <div id="score-display" class="score-display">
+              <div class="score-circle">
+                <span id="score-value">0</span>
+                <span class="score-label">分</span>
+              </div>
+              <div class="score-details">
+                <div class="score-item">
+                  <span class="score-label">准确率：</span>
+                  <span id="accuracy-score">0%</span>
+                </div>
+                <div class="score-item">
+                  <span class="score-label">完整度：</span>
+                  <span id="completeness-score">0%</span>
+                </div>
+                <div class="score-item">
+                  <span class="score-label">流畅度：</span>
+                  <span id="fluency-score">0%</span>
+                </div>
+              </div>
+              <div id="score-feedback" class="score-feedback"></div>
+            </div>
+            <div class="comparison-area">
+              <h4>对比分析：</h4>
+              <div class="comparison-box">
+                <div class="comparison-item">
+                  <span class="comparison-label">目标：</span>
+                  <span id="compare-target" class="compare-text"></span>
+                </div>
+                <div class="comparison-item">
+                  <span class="comparison-label">你的：</span>
+                  <span id="compare-actual" class="compare-text"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="practice-card">
+            <h3 class="practice-card-title">📜 练习记录</h3>
+            <div id="practice-history" class="practice-history">
+              <div class="history-empty">
+                <p>暂无练习记录</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-progress" class="page">
+        <h2 class="page-title">📊 学习进度追踪</h2>
+        <p class="page-subtitle">见证你的成长轨迹</p>
+
+        <div class="progress-container">
+          <div class="progress-card">
+            <h3 class="progress-card-title">📈 总体进度</h3>
+            <div class="circular-progress">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#e2e8f0" stroke-width="8"/>
+                <circle id="progress-circle" cx="50" cy="50" r="45" fill="none" stroke="#6366f1" stroke-width="8" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283"/>
+              </svg>
+              <div class="circular-progress-text">
+                <span id="progress-percent">0</span>%
+              </div>
+            </div>
+            <p class="progress-card-desc">已完成 <span id="progress-days">0</span>/14 天训练</p>
+          </div>
+
+          <div class="progress-card">
+            <h3 class="progress-card-title">🎯 阶段完成情况</h3>
+            <div class="phase-progress-list">
+              <div class="phase-progress-item">
+                <span class="phase-name">社交破冰 (Day 1-3)</span>
+                <div class="mini-progress-bar"><div id="phase-1-bar" class="mini-progress-fill"></div></div>
+                <span class="phase-count" id="phase-1-count">0/3</span>
+              </div>
+              <div class="phase-progress-item">
+                <span class="phase-name">职场表达 (Day 4-7)</span>
+                <div class="mini-progress-bar"><div id="phase-2-bar" class="mini-progress-fill"></div></div>
+                <span class="phase-count" id="phase-2-count">0/4</span>
+              </div>
+              <div class="phase-progress-item">
+                <span class="phase-name">灵活应变 (Day 8-11)</span>
+                <div class="mini-progress-bar"><div id="phase-3-bar" class="mini-progress-fill"></div></div>
+                <span class="phase-count" id="phase-3-count">0/4</span>
+              </div>
+              <div class="phase-progress-item">
+                <span class="phase-name">内化巩固 (Day 12-14)</span>
+                <div class="mini-progress-bar"><div id="phase-4-bar" class="mini-progress-fill"></div></div>
+                <span class="phase-count" id="phase-4-count">0/3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <h3 class="progress-card-title">💎 我的 Top 10 金句</h3>
+            <div class="top10-list" id="top10-list">
+              <div class="top10-empty">
+                <p>完成 Day 12 训练后，在这里记录你最喜欢的 10 句话术</p>
+                <button class="add-top10-btn" onclick="showTop10Modal()">添加金句</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <h3 class="progress-card-title">🏆 14 天总评</h3>
+            <div class="rating-grid">
+              <div class="rating-item">
+                <label>说话流畅度</label>
+                <div class="star-rating" data-dimension="fluency"></div>
+              </div>
+              <div class="rating-item">
+                <label>紧张感（越低越好）</label>
+                <div class="star-rating" data-dimension="nervousness"></div>
+              </div>
+              <div class="rating-item">
+                <label>临场反应</label>
+                <div class="star-rating" data-dimension="reaction"></div>
+              </div>
+              <div class="rating-item">
+                <label>自我满意度</label>
+                <div class="star-rating" data-dimension="satisfaction"></div>
+              </div>
+            </div>
+            <div class="feedback-box">
+              <label>最大收获：</label>
+              <textarea id="feedback-gain" placeholder="14天训练下来，你最大的收获是什么？"></textarea>
+              <label>下一步想提升：</label>
+              <textarea id="feedback-next" placeholder="接下来还想继续练什么？"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="day-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Day 1 — 自我介绍模板</h2>
+          <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+
+    <div id="top10-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>添加我的金句</h2>
+          <button class="close-btn" onclick="closeTop10Modal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="top10-form">
+            <div class="form-group">
+              <label>话术内容：</label>
+              <input type="text" id="top10-phrase" placeholder="输入你喜欢的话术">
+            </div>
+            <div class="form-group">
+              <label>来自哪一天：</label>
+              <select id="top10-day">
+                <option value="1">Day 1</option>
+                <option value="2">Day 2</option>
+                <option value="3">Day 3</option>
+                <option value="4">Day 4</option>
+                <option value="5">Day 5</option>
+                <option value="6">Day 6</option>
+                <option value="7">Day 7</option>
+                <option value="8">Day 8</option>
+                <option value="9">Day 9</option>
+                <option value="10">Day 10</option>
+                <option value="11">Day 11</option>
+                <option value="12">Day 12</option>
+                <option value="13">Day 13</option>
+                <option value="14">Day 14</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>适用场景：</label>
+              <input type="text" id="top10-scene" placeholder="例如：工作汇报">
+            </div>
+            <div class="form-group">
+              <label>我的版本（改成自己的话）：</label>
+              <input type="text" id="top10-version" placeholder="用你自己的话说">
+            </div>
+            <button class="submit-btn" onclick="addTop10()">添加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
