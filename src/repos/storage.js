@@ -23,7 +23,8 @@ function emptyData() {
     feedback: {},            // {gain, next}
     reviewCards: [],         // SRS 卡片 [{id, text, scene, phase, interval, due, streak, addedAt}]
     practiceHistory: [],     // 语音/朗读/即兴练习记录
-    aiSessions: [],          // AI 陪练会话摘要（不含 Key）
+    aiCurrent: null,         // 进行中的 AI 陪练会话
+    aiSessions: [],          // 已结束的 AI 陪练会话（不含 Key）
     settings: {},            // {theme, apiBase, apiKey, apiModel}
   }
 }
