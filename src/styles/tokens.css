@@ -1,0 +1,98 @@
+/* 设计令牌 · 取自 vibe-hub.org 实测值 */
+:root {
+  /* 主色 */
+  --color-primary: #4b3fe3;
+  --color-primary-hover: #3d33c9;
+  --color-primary-active: #322ab3;
+  --color-primary-soft: #ecf0fe;
+  --color-accent: #3759d8;
+  --color-violet: #6a6fff;
+
+  /* 背景与表面 */
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f9f9f9;
+  --color-surface-3: #f4f4f5;
+  --color-overlay: rgba(255, 255, 255, 0.72);
+
+  /* 文字 */
+  --color-text-1: #171717;
+  --color-text-2: #525253;
+  --color-text-3: #a1a1aa;
+
+  /* 边框 */
+  --color-border: #e4e4e7;
+  --color-border-2: #f0f0f2;
+
+  /* 状态色 */
+  --color-success: #2cb07f;
+  --color-success-soft: #e8f7f1;
+  --color-warning: #c46f0b;
+  --color-warning-soft: #fdf3e4;
+  --color-danger: #c9382f;
+  --color-danger-soft: #fdeeed;
+
+  /* 圆角 */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+
+  /* 阴影（柔和多层） */
+  --shadow-sm: 0 2px 8px rgba(12, 16, 36, 0.06);
+  --shadow-lg: 0 2px 8px rgba(12, 16, 36, 0.06), 0 20px 55px rgba(12, 16, 36, 0.16);
+  --shadow-primary: 0 8px 24px rgba(75, 63, 227, 0.28);
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* 字体 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue',
+    'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* 布局 */
+  --content-width: 1080px;
+  --nav-height: 60px;
+}
+
+/* 暗色主题 */
+[data-theme='dark'] {
+  --color-primary: #6a6fff;
+  --color-primary-hover: #7d84ff;
+  --color-primary-active: #5c60f0;
+  --color-primary-soft: #262648;
+  --color-accent: #6a8cff;
+  --color-violet: #9570ff;
+
+  --color-bg: #101014;
+  --color-surface: #1a1a20;
+  --color-surface-2: #1f1f26;
+  --color-surface-3: #26262e;
+  --color-overlay: rgba(26, 26, 32, 0.72);
+
+  --color-text-1: #f4f4f5;
+  --color-text-2: #b6b6bd;
+  --color-text-3: #71717a;
+
+  --color-border: #2d2d36;
+  --color-border-2: #242429;
+
+  --color-success: #3ecf9a;
+  --color-success-soft: #12271e;
+  --color-warning: #e0973f;
+  --color-warning-soft: #2a1e0e;
+  --color-danger: #ef5f56;
+  --color-danger-soft: #2c1412;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.3), 0 20px 55px rgba(0, 0, 0, 0.5);
+  --shadow-primary: 0 8px 24px rgba(106, 111, 255, 0.3);
+}
