@@ -13,7 +13,10 @@ const navItems = [
   { to: '/', label: '训练计划' },
   { to: '/flashcard', label: '话术速查' },
   { to: '/review', label: '复习' },
+  { to: '/checkin', label: '打卡' },
   { to: '/practice', label: '语音练习' },
+  { to: '/reading', label: '朗读' },
+  { to: '/impromptu', label: '即兴挑战' },
   { to: '/coach', label: 'AI 陪练' },
   { to: '/progress', label: '进度' },
 ]

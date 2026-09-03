@@ -19,11 +19,29 @@
 9. 旧版源码归档在 `legacy/`（只读参考）
 
 ## 当前进行中
-- 阶段 3 · Sprint 0：F0 工程地基（Vite 脚手架 + 设计令牌 + 布局骨架）
+- 阶段 6 · 推送 GitHub + Vercel 部署
 
 ## 下一步（具体）
-1. F0 完成 → Gate2（build 通过）→ 提交 git
-2. F1 14 天训练计划（数据沿用 legacy/data.js 迁为 JSON 模块）
+1. 推送代码到 GitHub（直连被墙时用 MCP push_files）
+2. Vercel 导入仓库部署（构建命令 npm run build，产物 dist/，无需 rewrite 配置）
+
+## 已完成 Features（均过 Gate2 build + Gate3 测试）
+- [x] F0 工程地基：Vite+Vue3+Pinia 骨架 / vibe-hub 设计令牌 / 毛玻璃导航
+- [x] F1 14 天训练计划页 + 每日详情弹窗（commit f59451e）
+- [x] F2 话术速查卡 + SRS 间隔复习：phrases.js 分类卡库 / srs.js 艾宾浩斯调度 / 翻卡自评（commit 8269aa6）
+- [x] F3 打卡记录+笔记：checkinLists.js 每日清单 / 旧版数据自动迁移+toast 提示（commit 8018610）
+- [x] F4 语音练习评分：useSpeech.js 识别封装 / scoring.js 编辑距离评分+语速+填充词 / practice store 历史 / 17 单测全过（commit 87f4cef）
+- [x] F5 AI 对话陪练：ai.js OpenAI 兼容 fetch 封装 / 6 角色扮演 + 4 辩题 / 教练结构化点评 / 会话存档（commit 045e37e）
+- [x] F6 朗读训练+即兴演讲：绕口令/美文评分 / 20 题库 30 秒准备倒计时 / 三维自评 / AI 演讲点评（commit 5ddb418）
+- [x] F7 进度统计+设置页：SVG 趋势/热力/六维雷达 / 主题切换 / AI 接口配置与连接测试 / 备份导入导出（commit ca53044）
+
+## 阶段 4 门禁验收记录（2026-09-04）
+- [x] Gate0 需求：7 份立项文档 + F1-F7 完成标准均落 phases/ 与 docs/planning/
+- [x] Gate1 设计：架构分层（views→stores→repos）落地无违例；设计令牌全量应用
+- [x] Gate2 构建：`npm run build` 通过（79 modules，gzip 后首包 45.7KB）
+- [x] Gate3 测试：Vitest 28/28 通过（scoring 17 + ai 11）
+- [x] Gate4 审查：浏览器冒烟测试 10/10 页面渲染正常、console 零错误；导航补齐 9 入口
+- 修复记录：review.js 残留 TS 注解 `(): number` 导致生产构建失败 → 已移除
 
 ## 失败方案 & 证据
 - git clone github.com 直连被重置（Connection was reset）→ 改用 GitHub MCP 下载文件，仓库文件用 run_mcp 获取。
