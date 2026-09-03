@@ -21,11 +21,15 @@ window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener('change', (
 app.use(router)
 app.mount('#app')
 
-// 旧数据迁移一次性提示
+// 旧数据迁移一次性提示（可见 toast）
 if (settings.allData.__migrated) {
   const count =
     (settings.allData.completedDays?.length || 0) +
     Object.keys(settings.allData.checkins || {}).length +
     (settings.allData.top10?.length || 0)
-  console.info(`[口才训练营] 已从旧版迁移数据（${count} 条记录）`)
+  const toast = document.createElement('div')
+  toast.className = 'migration-toast'
+  toast.textContent = `已自动导入旧版数据（${count} 条记录）`
+  document.body.appendChild(toast)
+  setTimeout(() => toast.remove(), 5000)
 }

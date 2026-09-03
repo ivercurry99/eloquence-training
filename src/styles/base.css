@@ -276,3 +276,19 @@ a {
 .fade-in {
   animation: fade-in 0.25s ease both;
 }
+
+/* 迁移提示 toast */
+.migration-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: var(--color-text-1);
+  color: var(--color-surface);
+  font-size: 14px;
+  box-shadow: var(--shadow-lg);
+  animation: fade-in 0.3s ease both;
+}
