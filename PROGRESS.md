@@ -19,11 +19,12 @@
 9. 旧版源码归档在 `legacy/`（只读参考）
 
 ## 当前进行中
-- 阶段 6 · 推送 GitHub + Vercel 部署
+- 无 · 项目已上线 🎉
 
-## 下一步（具体）
-1. 推送代码到 GitHub（直连被墙时用 MCP push_files）
-2. Vercel 导入仓库部署（构建命令 npm run build，产物 dist/，无需 rewrite 配置）
+## 上线信息
+- GitHub 仓库：https://github.com/ivercurry99/eloquence-training（公开，10 个 topics，README 双语）
+- 线上地址：https://eloquence-training-v2.vercel.app（Vercel 自动识别 Vite，零配置）
+- 后续推送 main 分支会自动触发 Vercel 重新部署
 
 ## 已完成 Features（均过 Gate2 build + Gate3 测试）
 - [x] F0 工程地基：Vite+Vue3+Pinia 骨架 / vibe-hub 设计令牌 / 毛玻璃导航
